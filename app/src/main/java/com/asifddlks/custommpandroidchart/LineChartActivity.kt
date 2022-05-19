@@ -70,101 +70,97 @@ class LineChartActivity:AppCompatActivity() {
         )
         setContentView(R.layout.activity_line_chart)
         title = "Line Chart"
+
         tvX = findViewById(R.id.tvXMax)
         tvY = findViewById(R.id.tvYMax)
-        seekBarX = findViewById(R.id.seekBar1)
-        seekBarX.setOnSeekBarChangeListener(onSeekBarChangeListener)
-        seekBarY = findViewById(R.id.seekBar2)
-        seekBarY.max = 180
-        seekBarY.setOnSeekBarChangeListener(onSeekBarChangeListener)
 
-        // // Chart Style // //
         chart = findViewById(R.id.chart1)
 
-        run {
+        seekBarX = findViewById(R.id.seekBar1)
+        seekBarX.setOnSeekBarChangeListener(onSeekBarChangeListener)
+
+        seekBarY = findViewById(R.id.seekBar2)
+        seekBarY.setOnSeekBarChangeListener(onSeekBarChangeListener)
+
+        seekBarY.max = 180
 
 
-            // background color
-            chart.setBackgroundColor(Color.WHITE)
+        // // Chart Style // //
+        // background color
+        chart.setBackgroundColor(Color.WHITE)
 
-            // disable description text
-            chart.getDescription().isEnabled = false
+        // disable description text
+        chart.getDescription().isEnabled = false
 
-            // enable touch gestures
-            chart.setTouchEnabled(true)
+        // enable touch gestures
+        chart.setTouchEnabled(true)
 
-            // set listeners
-            chart.setOnChartValueSelectedListener(onChartValueSelectedListener)
-            chart.setDrawGridBackground(false)
+        // set listeners
+        chart.setOnChartValueSelectedListener(onChartValueSelectedListener)
+        chart.setDrawGridBackground(false)
 
-            // create marker to display box when values are selected
-            val mv = MyMarkerView(this, R.layout.custom_marker_view)
+        // create marker to display box when values are selected
+        val mv = MyMarkerView(this, R.layout.custom_marker_view)
 
-            // Set the marker to the chart
-            mv.chartView = chart
-            chart.marker = mv
+        // Set the marker to the chart
+        mv.chartView = chart
+        chart.marker = mv
 
-            // enable scaling and dragging
-            chart.isDragEnabled = true
-            chart.setScaleEnabled(true)
-            // chart.setScaleXEnabled(true);
-            // chart.setScaleYEnabled(true);
+        // enable scaling and dragging
+        chart.isDragEnabled = true
+        chart.setScaleEnabled(true)
+        // chart.setScaleXEnabled(true);
+        // chart.setScaleYEnabled(true);
 
-            // force pinch zoom along both axis
-            chart.setPinchZoom(true)
-        }
-        var xAxis: XAxis
-        run {
-            // // X-Axis Style // //
-            xAxis = chart.xAxis
+        // force pinch zoom along both axis
+        chart.setPinchZoom(true)
 
-            // vertical grid lines
-            xAxis.enableGridDashedLine(10f, 10f, 0f)
-        }
-        var yAxis: YAxis
-        run {
-            // // Y-Axis Style // //
-            yAxis = chart.axisLeft
+        // // X-Axis Style // //
+        var xAxis: XAxis = chart.xAxis
 
-            // disable dual axis (only use LEFT axis)
-            chart.axisRight.isEnabled = false
+        // vertical grid lines
+        xAxis.enableGridDashedLine(10f, 10f, 0f)
 
-            // horizontal grid lines
-            yAxis.enableGridDashedLine(10f, 10f, 0f)
+        // // Y-Axis Style // //
+        var yAxis: YAxis = chart.axisLeft
 
-            // axis range
-            yAxis.axisMaximum = 200f
-            yAxis.axisMinimum = -50f
-        }
-        run {
-            // // Create Limit Lines // //
-            val llXAxis = LimitLine(9f, "Index 10")
-            llXAxis.lineWidth = 4f
-            llXAxis.enableDashedLine(10f, 10f, 0f)
-            llXAxis.labelPosition = LimitLabelPosition.RIGHT_BOTTOM
-            llXAxis.textSize = 10f
-            //llXAxis.typeface = tfRegular
-            val ll1 = LimitLine(150f, "Upper Limit")
-            ll1.lineWidth = 4f
-            ll1.enableDashedLine(10f, 10f, 0f)
-            ll1.labelPosition = LimitLabelPosition.RIGHT_TOP
-            ll1.textSize = 10f
-            //ll1.typeface = tfRegular
-            val ll2 = LimitLine(-30f, "Lower Limit")
-            ll2.lineWidth = 4f
-            ll2.enableDashedLine(10f, 10f, 0f)
-            ll2.labelPosition = LimitLabelPosition.RIGHT_BOTTOM
-            ll2.textSize = 10f
-            //ll2.typeface = tfRegular
+        // disable dual axis (only use LEFT axis)
+        chart.axisRight.isEnabled = false
 
-            // draw limit lines behind data instead of on top
-            yAxis.setDrawLimitLinesBehindData(true)
-            xAxis.setDrawLimitLinesBehindData(true)
+        // horizontal grid lines
+        yAxis.enableGridDashedLine(10f, 10f, 0f)
 
-            // add limit lines
-            yAxis.addLimitLine(ll1)
-            yAxis.addLimitLine(ll2)
-        }
+        // axis range
+        yAxis.axisMaximum = 200f
+        yAxis.axisMinimum = -50f
+
+        // // Create Limit Lines // //
+        val llXAxis = LimitLine(9f, "Index 10")
+        llXAxis.lineWidth = 4f
+        llXAxis.enableDashedLine(10f, 10f, 0f)
+        llXAxis.labelPosition = LimitLabelPosition.RIGHT_BOTTOM
+        llXAxis.textSize = 10f
+        //llXAxis.typeface = tfRegular
+        val ll1 = LimitLine(150f, "Upper Limit")
+        ll1.lineWidth = 4f
+        ll1.enableDashedLine(10f, 10f, 0f)
+        ll1.labelPosition = LimitLabelPosition.RIGHT_TOP
+        ll1.textSize = 10f
+        //ll1.typeface = tfRegular
+        val ll2 = LimitLine(-30f, "Lower Limit")
+        ll2.lineWidth = 4f
+        ll2.enableDashedLine(10f, 10f, 0f)
+        ll2.labelPosition = LimitLabelPosition.RIGHT_BOTTOM
+        ll2.textSize = 10f
+        //ll2.typeface = tfRegular
+
+        // draw limit lines behind data instead of on top
+        yAxis.setDrawLimitLinesBehindData(true)
+        xAxis.setDrawLimitLinesBehindData(true)
+
+        // add limit lines
+        yAxis.addLimitLine(ll1)
+        yAxis.addLimitLine(ll2)
 
         // add data
         seekBarX.progress = 45
@@ -172,10 +168,10 @@ class LineChartActivity:AppCompatActivity() {
         setData(45, 180f)
 
         // draw points over time
-        chart!!.animateX(1500)
+        chart.animateX(1500)
 
         // get the legend (only possible after setting data)
-        val l = chart!!.legend
+        val l = chart.legend
 
         // draw legend entries as lines
         l.form = LegendForm.LINE
