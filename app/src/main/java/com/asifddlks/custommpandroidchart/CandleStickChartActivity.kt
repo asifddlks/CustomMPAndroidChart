@@ -114,7 +114,7 @@ class CandleStickChartActivity:AppCompatActivity() {
         leftAxis.setLabelCount(7, false)
         leftAxis.setDrawGridLines(false)
         leftAxis.setDrawAxisLine(false)
-        val rightAxis = chart.getAxisRight()
+        val rightAxis = chart.axisRight
         rightAxis.isEnabled = false
         //        rightAxis.setStartAtZero(false);
 
