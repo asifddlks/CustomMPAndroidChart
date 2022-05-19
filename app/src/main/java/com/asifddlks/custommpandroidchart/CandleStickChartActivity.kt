@@ -84,7 +84,7 @@ class CandleStickChartActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_candle_chart)
-        //title = "CandleStickChartActivity"
+        title = "Candle Stick Chart"
         tvX = findViewById(R.id.tvXMax)
         tvY = findViewById(R.id.tvYMax)
 

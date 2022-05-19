@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../asifahmed/AsifAhmed/AndroidStudioProjects/CustomMPAndroidChart/app/src/main/res/drawable/fade_red.xml" value="0.102" />
         <entry key="../../../../asifahmed/AsifAhmed/AndroidStudioProjects/CustomMPAndroidChart/app/src/main/res/layout/activity_candlechart.xml" value="0.2828125" />
+        <entry key="../../../../asifahmed/AsifAhmed/AndroidStudioProjects/CustomMPAndroidChart/app/src/main/res/layout/activity_line_chart.xml" value="0.2828125" />
+        <entry key="../../../../asifahmed/AsifAhmed/AndroidStudioProjects/CustomMPAndroidChart/app/src/main/res/layout/activity_main.xml" value="0.2828125" />
+        <entry key="../../../../asifahmed/AsifAhmed/AndroidStudioProjects/CustomMPAndroidChart/app/src/main/res/layout/custom_marker_view.xml" value="0.2828125" />
         <entry key="../../../../asifahmed/AsifAhmed/AndroidStudioProjects/CustomMPAndroidChart/app/src/main/res/menu/candle.xml" value="0.1375" />
+        <entry key="../../../../asifahmed/AsifAhmed/AndroidStudioProjects/CustomMPAndroidChart/app/src/main/res/menu/line.xml" value="0.2828125" />
       </map>
     </option>
   </component>
